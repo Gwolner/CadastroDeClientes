@@ -10,7 +10,7 @@ Para hospedagem foi utilizado o Apache e para criar e gerir o bd MySQL, foi util
 
 Consiste em um bd MySQL com uma tabela contendo os campos dos clientes a fim de dar suporte ao aprendizado do CRUD PHP.
 
-```
+```mysql
 AQUI 
 EU BOTO 
 O CODIGO SQL
