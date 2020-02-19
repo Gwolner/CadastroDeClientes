@@ -1,21 +1,14 @@
-# crud-php-front-materialize
+# Cadastro de clientes
 
-Sistema de cadastro de clientes desenvolvido a fim de aprender CRUD em PHP e usando framework Materialize para o front.
+Aprendizado do CRUD em PHP e do framework [Materialize](https://materializecss.com/getting-started.html) a partir do desenvolvimento de um sistema que cadastra clientes genéricos em um BD relacional (MySQL).
 
-Para hospedagem foi utilizado o Apache e para criar e gerir o bd MySQL, foi utilizado o PHPMyAdmin, ambos pertencentes ao XAMPP.
+## Hospedagem e SGBD
 
-"Sistema criado para aprender o crud em php, a usar o framework materialize e a usar o phpmyadmin!!"
+Para a hospedagem do sistema foi utilizado o servidor Apache e na criação e gestão do BD MySQL, o PHPMyAdmin, ambos pertencentes ao [XAMPP](https://www.apachefriends.org/pt_br/download.html).
 
-## A tabela cliente
+## Banco de Dados
 
-Consiste em um bd MySQL com uma tabela contendo os campos dos clientes a fim de dar suporte ao aprendizado do CRUD PHP.
-
-```mysql
-AQUI 
-EU BOTO 
-O CODIGO SQL
-MAIS BEM ORGANIZADO
-```
+O BD <b>crud</b> possui uma única tabela chamada <b>cliente</b>, contendo os campos <b>id, nome, sobrenome, email e telefone</b> a fim de auxiliar no aprendizado do CRUD. O script do BD foi exportado do PHPMyAdmin e pode ser encontrado no diretório [bd_mysql](https://github.com/Gwolner/crud-php-front-materialize/tree/master/bd_mysql).
 
 ## Front Materialize
 
