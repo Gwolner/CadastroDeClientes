@@ -1,4 +1,4 @@
-# Cadastro de clientes
+# Cadastro de clientes <img src="logo/php.png" width="70" height="40" align="right"><img src="logo/materialize.png" width="70" height="40" align="right">
 
 Aprendizado do CRUD em PHP e do framework [Materialize](https://materializecss.com/getting-started.html) a partir do desenvolvimento de um sistema que cadastra clientes genéricos em um BD relacional (MySQL).
 
