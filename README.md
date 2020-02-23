@@ -46,4 +46,111 @@ Confirmada a exclusão, o registro é apagado e uma mensagem é exibida por algu
 
 ## CRUD PHP <img src="logo/php.png" width="65" height="37" align="right">
 
-Explicar organização da estrutura do código, colocar metodos novos que aprendi e explicar pra que servem.
+Os arquivos de maior complexidade que compõem a aplicação possuem seus códigos expostos abaixo para uma melhor análise e entendimento de sua funcionalidade dentro do sistema.
+
+* <b>includes/message.php</b>
+
+```php
+<?php
+# Sessão
+session_start();
+if(isset($_SESSION["mensagem"])):
+?>
+
+<script>
+	//Mensagem de sucesso ou erro ao cadastarar
+	window.onload = function(){
+		M.toast({html: "<?php echo $_SESSION["mensagem"];?>"});
+	};
+</script>
+
+
+<?php
+endif;
+session_unset();
+?>
+```
+
+* <b>php_action/update.php</b>
+
+```php
+<?php
+# Sessão
+session_start();
+# Conexão
+require_once 'db_connect.php';
+
+if(isset($_POST['btn-editar'])){
+    $nome = mysqli_escape_string($connect, $_POST['nome']);
+    $sobrenome = mysqli_escape_string($connect, $_POST['sobrenome']);
+    $email = mysqli_escape_string($connect, $_POST['email']);
+    $telefone = mysqli_escape_string($connect, $_POST['telefone']);
+    $id = mysqli_escape_string($connect, $_POST['id']);
+
+    $sql = "UPDATE cliente SET nome = '$nome', sobrenome = '$sobrenome', email = '$email', telefone = '$telefone' 
+            WHERE id = '$id'";
+
+    if(mysqli_query($connect, $sql)){
+        $_SESSION["mensagem"] = "Dados atualizados.";
+        header('location: ../index.php');
+    }else{
+        $_SESSION["mensagem"] = "Erro ao atualizar!";
+        header('location: ../index.php');
+    }
+
+}
+
+
+?>
+```
+
+* <b>php_action/delete.php</b>
+
+```php
+<?php
+# Sessão
+session_start();
+# Conexão
+require_once 'db_connect.php';
+
+if(isset($_POST['btn-deletar'])){
+   
+    $id = mysqli_escape_string($connect, $_POST['id']);
+
+    $sql = "DELETE FROM cliente WHERE id = '$id'";
+
+    if(mysqli_query($connect, $sql)){
+        $_SESSION["mensagem"] = "Cliente removido.";
+        header('location: ../index.php');
+    }else{
+        $_SESSION["mensagem"] = "Erro ao deletar!";
+        header('location: ../index.php');
+    }
+
+}
+
+
+?>
+```
+
+* <b>php_action/db_connect.php</b>
+
+```php
+<?php 
+# Conexão com BD
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$db_name = "crud";
+
+$connect = mysqli_connect($servername, $username, $password, $db_name);
+mysqli_set_charset($connect, "UTF-8");
+
+if(mysqli_connect_error()){
+    echo "Erro na conexão: ".mysqli_connect_error();
+}
+
+?>
+```
+
