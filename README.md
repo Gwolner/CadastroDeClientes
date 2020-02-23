@@ -2,7 +2,7 @@
 
 Aprendizado do CRUD PHP e do framework [Materialize](https://materializecss.com/getting-started.html) a partir do desenvolvimento de um sistema que cadastra clientes genéricos em um BD relacional (MySQL).
 
-## Hospedagem e SGBD <img src="logo/xamp.png" width="36" height="36" align="right">
+## Hospedagem e SGBD <img src="logo/xampp.png" width="36" height="36" align="right">
 
 Para a hospedagem do sistema foi utilizado o servidor Apache e na criação e gestão do BD MySQL, o PHPMyAdmin, ambos pertencentes ao [XAMPP](https://www.apachefriends.org/pt_br/download.html).
 
